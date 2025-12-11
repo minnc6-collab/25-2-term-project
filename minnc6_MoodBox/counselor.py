@@ -3,21 +3,21 @@ import random
 
 def safe_extract_playlist_id(item):
     """
-    YTMusic 검색 결과 하나(item)에서
-    실제 유튜브 재생목록 링크에 쓸 수 있는 playlist ID만 뽑는 함수
+    Extracts a YouTube playlist ID from a YTMusic search result.
+    Filters out IDs that cannot be used in a normal YouTube playlist link.
     """
     browse_id = item.get("browseId")
     if not browse_id:
         return None
 
-    # YTMusic 쪽은 재생목록에 VL 접두사가 붙어 있는 경우가 많음
-    # → 웹 유튜브에서는 list= 뒤에 VL 빼고 쓰는 게 더 안정적
+    # On YTMusic, some playlists start with "VL". 
+    # Removing "VL" generally makes the ID usable in a standard web playlist URL.
     if browse_id.startswith("VL"):
         playlist_id = browse_id[2:]
     else:
         playlist_id = browse_id
 
-    # 너무 짧은 이상한 ID는 버리기 (대충 필터용)
+    # Reject IDs that are too short 
     if len(playlist_id) < 10:
         return None
 
@@ -25,7 +25,7 @@ def safe_extract_playlist_id(item):
 
 
 def recommend_song(emotion):
-    print(f"🔍 '{emotion}' 감정에 맞는 새로운 노래를 찾는 중...")
+    print(f"🔍 Searching for a playlist that matches the emotion '{emotion}'...")
 
     yt = YTMusic()
 
@@ -60,35 +60,26 @@ def recommend_song(emotion):
         ]
     }
 
-    # 감정에 맞는 검색 키워드 리스트에서 하나 랜덤 선택
+    # Select one keyword based on the emotion
     keyword_list = mood_keywords.get(emotion, ['Trending Music'])
     selected_keyword = random.choice(keyword_list)
 
-    # 1) 플레이리스트 검색
+    # 1) Search for playlists
     results = yt.search(selected_keyword, filter='playlists')
 
     if results:
-        # 상위 10개 정도만 후보로 보고, 그 중에서
-        # 실제로 유효한 playlistId가 있는 것만 모음
+        # Look at the top 10 results and keep only valid playlists
         candidates = []
         for item in results[:10]:
             pid = safe_extract_playlist_id(item)
             if pid:
-                title = item.get('title', '제목 없음')
+                title = item.get('title', 'No Title')
                 candidates.append((title, pid))
 
         if candidates:
             title, playlist_id = random.choice(candidates)
             link = f"https://www.youtube.com/playlist?list={playlist_id}"
-            return f"💿 테마: {selected_keyword}\n🎹 추천 리스트: {title}\n🔗 바로 듣기: {link}"
+            return f"💿 Theme: {selected_keyword}\n🎹 Recommended Playlist: {title}\n🔗 Listen: {link}"
 
-    # 2) 플레이리스트 쪽이 전부 애매하면, 그냥 노래 단일곡 추천으로 fallback
-    song_results = yt.search(selected_keyword, filter='songs')
-    if song_results:
-        top_song = random.choice(song_results[:5])
-        title = top_song.get('title', '제목 없음')
-        video_id = top_song.get('videoId')
-        if video_id:
-            return f"💿 AI 추천곡: {title}\n🔗 바로 듣기: https://www.youtube.com/watch?v={video_id}"
-
-    return "노래를 찾을 수 없습니다 ㅠㅠ"
+    
+    return "No playlists could be found😢"
