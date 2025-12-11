@@ -25,7 +25,7 @@ def safe_extract_playlist_id(item):
 
 
 def recommend_song(emotion):
-    print(f"🔍 '{emotion}' 감정에 맞는 새로운 노래를 찾는 중...")
+    print(f"🔍 '{emotion}' 감정에 맞는 플레이리스트를 찾는 중...")
 
     yt = YTMusic()
 
@@ -80,7 +80,7 @@ def recommend_song(emotion):
         if candidates:
             title, playlist_id = random.choice(candidates)
             link = f"https://www.youtube.com/playlist?list={playlist_id}"
-            return f"💿 테마: {selected_keyword}\n🎹 추천 리스트: {title}\n🔗 바로 듣기: {link}"
+            return f"💿 테마: {selected_keyword}\n🎹 추천 재생목록: {title}\n🔗 바로 듣기: {link}"
 
     # 2) 플레이리스트 쪽이 전부 애매하면, 그냥 노래 단일곡 추천으로 fallback
     song_results = yt.search(selected_keyword, filter='songs')
