@@ -1,6 +1,15 @@
 # Mood-Jukebox
 
+## 1. Project Overview
+This program analyzes your English diary using AI(HuggingFace) and recommends a **YouTube playlist** that fits your current mood.
+* When you input your feelings, the AI classifies them into one of 7 emotions (e.g., Joy, Sadness).
+* Based on the analyzed emotion, it searches for the perfect playlist on YouTube and provides the link.
 
+## 2. Using package
+This project requires the following libraries:
+* **transformers**: AI model for emotion analysis
+* **torch**: Framework for running the AI model
+* **ytmusicapi**: Used to search YouTube Music and generate links
 
 ## 1. Project Overview
 
@@ -30,9 +39,10 @@ This project requires the following libraries:
 
 ### Step 1: Install Packages
 
+### Step 1: Install Packages
 ```bash
-
 pip install transformers torch ytmusicapi
+```
 
 ```
 
@@ -43,6 +53,7 @@ pip install transformers torch ytmusicapi
 ```bash
 
 python main.py
+```
 
 ```
 
