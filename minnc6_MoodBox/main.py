@@ -2,10 +2,10 @@
 import mood_ai
 import counselor
 
-print("=== 🎧 Mood-Jukebox (종료: q) ===")
+print("=== 🎧 Mood-Jukebox (exit: q) ===")
 
 while True:
-    txt = input("\n기분이 어떠신가요? (영어): ")
+    txt = input("\nHow are you feeling right now? (English): ")
     if txt == 'q': break
     
     try:
@@ -14,10 +14,10 @@ while True:
         
         percentage = score * 100
         
-        print(f"👉 분석 결과: {emo} (확신도: {percentage:.1f}%)")
+        print(f"👉 Emotion detected: {emo} (Confidence: {percentage:.1f}%)")
         
         rec = counselor.recommend_song(emo)
         print(rec)
         
     except Exception as e:
-        print(f"에러: {e}")
+        print(f"Error: {e}")
