@@ -19,11 +19,11 @@ This project requires the following libraries:
 ```bash
 pip install transformers torch ytmusicapi
 ```
-
 ### Step 2: Run the program
 ```bash
 python main.py
 ```
+
 
 ### Step 3: Usage Example
 <img width="1260" height="467" alt="image" src="https://github.com/user-attachments/assets/9e67eefe-dc25-4467-9113-77fe5ad223fd" />
