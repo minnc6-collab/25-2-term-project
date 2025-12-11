@@ -24,11 +24,7 @@ python main.py
 ```
 
 ### Step 3: 실행 예시
-기분이 어떠신가요? (영어): I am so happy today!  
-👉 분석 결과: joy (확신도: 98.2%)
-
-💿 테마: Summer Hits  
-🔗 바로 듣기: https://www.youtube.com/playlist?list=...
+<img width="1275" height="393" alt="image" src="https://github.com/user-attachments/assets/929d3678-0886-4b66-a8ea-0430d54de20e" />
 
 ## 4. 참고 자료
 - Hugging Face Model: j-hartmann/emotion-english-distilroberta-base  
