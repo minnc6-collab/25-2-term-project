@@ -9,7 +9,7 @@
 
 ### 2. Choi Minjun
 * **Project Name:** [Style_Changer] Korean Text Style Transfer
-* **Folder Location:** (./cholminjun-excha)
+* **Folder Location:** [cholminjun_Style Changer](./cholminjun-excha)
 * **Description:** An open-source tool utilizing a Fine-tuned KoBART model from Huggingface to convert input Korean text into various styles (e.g., formal to friendly).
 
 ### 3. Choi Yebin
