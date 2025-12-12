@@ -1,4 +1,4 @@
-✍️ Code Comment Generator
+✍️ Code Comment Generator 
 
 1. Project Overview
 This project is an open-source tool that generates comments and
