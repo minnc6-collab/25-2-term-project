@@ -36,8 +36,7 @@ python main.py
 
 ---
 
-### 2️⃣ Step 3: Usage Example (이게 핵심)
-교수님이 제일 좋아하는 부분이다.
+### Step 3: Usage Example
 
 ```md
 ### Step 3: Usage Example
@@ -50,15 +49,9 @@ Generated Result:
 # This function adds two numbers
 def add(a, b):
     return a + b
-
-
-👉 실제 실행 로그처럼 보이게 하는 게 포인트  
-👉 스크린샷 없어도 OK
-
 ---
 
-### 3️⃣ References 섹션 (이거 없으면 감점 가능)
-README 맨 아래에 **반드시** 추가.
+### References 섹션 
 
 ```md
 ---
