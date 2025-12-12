@@ -13,7 +13,7 @@
 * **Description:** An open-source tool utilizing a Fine-tuned KoBART model from Huggingface to convert input Korean text into various styles (e.g., formal to friendly).
 
 ### 3. Choi Yebin
-* **Project Name:** [Code-Commenter] Python Code Comment Generator
+* **Project Name:** [choiyebin_code_commenter](choiyebin_code_commenter)
 * **Folder Location:** choiyebin_code_commenter
 * **Description:** An open-source tool that automatically generates comments and docstrings for Python code using a HuggingFace pre-trained code generation model, helping improve code readability and maintainability.
 
