@@ -1,19 +1,30 @@
-✍️ Code Comment Generator 
+# ✍️ Code Comment Generator
 
-1. Project Overview
+## 1. Project Overview
 This project is an open-source tool that generates comments and
-docstrings for Python code using a HuggingFace pre-trained model.
+docstrings for Python code using a HuggingFace pre-trained language model.
 
-2. Features
-- Automatic Python code comment generation
-- Uses transformer-based language model
-- Simple CLI interface
+When the user inputs Python source code,
+the AI analyzes the code and automatically generates
+clear comments to improve readability.
 
-3. Using package
-- Python 3.10
-- transformers
-- torch
+- Developer: Choi Yebin
+- Core Technology: HuggingFace Transformers, CodeGen Model
 
-4. How to Run
-pip install -r requirements.txt
-python main.py
+---
+
+## 2. Using package
+This project uses the following libraries:
+
+| Package | Purpose | Version |
+|--------|--------|---------|
+| transformers | Load code generation model | 4.30+ |
+| torch | Run transformer model | 2.0+ |
+
+---
+
+## 3. Installation & Usage
+
+### Step 1: Install Packages
+```bash
+pip install transformers torch
